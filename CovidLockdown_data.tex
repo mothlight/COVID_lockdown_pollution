@@ -106,19 +106,65 @@ city science
 
 \maketitle
 
+\section{Introduction}
+
+The swift spread of SARS-CoV-2 across the world in 2020 caused rapid changes as governments imposed a variety of restrictions to slow the transmission. Even before being declared a pandemic on 11 March 2020 by the World Health Organization, mobility dropped dramatically as travel and work restrictions were brought in, with reductions shown by Google and Apple \citep{Google2020,Apple2020}. By April 2020, more than half of the world reduced their travel by more than 50\% \citep{LeQuere2020,Forster2020}.
+
+With increased restrictions came scenes of deserted cities and empty roads. One of the most visible impacts was a reduction of air pollution and clear skies in cities that hadn't seen blue skies in years. While people all over the world marvelled at clear skies, satellite and ground level measures confirmed widespread reductions\citep{Liu2020c}. However, the reductions were mixed with different pollutants showing a variety of trends in different cities. 
+
+Talk about the context of seasonality and long term trends. Also replacement of coal by renewables. Introduction to pollutants (especially AQI scale).
+
+
+
+
+NO$_{2}$ through fuel combustion. PM$_{2.5}$ through motor vehicles (especially diesel trucks). Both through fossil fuel plants but PM$_{2.5}$ exclusively through coal. In US, reductions in NO$_{2}$ with little change in PM$_{2.5}$. Hypothesis that passenger miles decrease while commercial vehicles little change. NO$_{2}$ levels decreased the most (a direct but not linear) in states with the largest reductions in mobility and the least in states with minimal social distancing measures. PM$_{2.5}$ did not decrease and increased to abnormally high levels in 1/5 of the states. \citep{Archer2020}
+
+
+In Scotland, NO$_{2}$ down, PM$_{2.5}$ similar (but based on dust from Sahara in 2019) with motor journeys down by 65\%\citep{Dobson2020}
+
+Lockdowns reduction of NO$_{2}$ by 30\% (Europe and North America) and up to 50\% in parts of Asia during Spring 2020. As a precursor to O$_{3}$, O$_{3}$ expected to reduce (normally low in winter but increase in spring and summer) \citep{Dentener2020}
+
+Trends of SO$_{2}$, mostly from burning coal and oil. India top emitter and trending upward, China is trending downward. Almost all countries downward (not India and Saudi Arabia)
+\citep{Dahiya2019}
+
+In China, SO$_{2}$ levels peaked about 2008 and downward trend through 2018 \citep{Wang2018b}
+
+AQI in China when 1/3 cities locked down, down 19 points AQI and 14 mg/m$^{3}$ for PM$_{2.5}$, but in non-locked down, still down about half those values. Effects larger in colder, richer, and more industrialised cities. Even with reductions, pollution levels still high. \citep{He2020}
+
+
+\cite{Giani2019} finds 29.7\% reduction of PM$_{2.5}$ across China and 17.1\% across Europe through lockdowns in the first half of 2020.
+
+In Wuhan, AQI decreased (with high decreases in areas of higher population density) over the initial lockdown in January/February 2020. AQI is a combination of SO$_{2}$, NO$_{2}$, PM$_{10}$, PM$_{2.5}$, O$_{3}$ and CO. NO$_{2}$ decreased while O$_{3}$ increased. Same trend across Hubei province. National traffic volume down 70\% CO was down 22.7\% but varied between different sites 3-34\% \citep{Lian2020}
+
+In Wuhan and 4 Italian/French cities, 56\% reduction in NO$_{x}$. PM reductions 42\% (Wuhan) and 8\% (Europe). Ozone increase 17\% and 36\% in Europe and Wuhan. \citep{Sicard2020}. \citet{Connerton2020} found similar reductions in CO, NO$_{2}$, and PM$_{2.5}$ and increases in O$_{3}$ in S\~{a}o Paulo, Paris, Los Angeles, and New York City. 
+
+In the United States, some pollutant levels (CO, NO$_{2}$, and O$_{3}$) were lower than expected during lockdowns but anomalies ended 5-6 weeks after stay-at-home orders were issued. So, reductions were short-lived and PM$_{10}$ didn't change while PM$_{2.5}$ increased. \citep{Bekbulat2020}
+
+
+\citet{Venter2020a} (Figure \ref{fig:Venter2020}) finds substantial variations in temporal and spatial pollution anomalies across 34 countries for NO$_{2}$, O$_{3}$, and PM$_{2.5}$ that remain unexplained. They speculate that there are additional meteorological and environmental factors and country specific lockdown regulations they could not account for with their analysis. 
+
+This is the gap we find and we present a city-level analysis to explain pollution anomalies due to COVID-19 restrictions and public health policies and how different cities deliver different results based on their urban design, transportation networks, and changes in mobility.
+
+
+\begin{figure*}
+\centering
+\includegraphics[width=.99\linewidth]{images/Venter2020-FigS5.png}
+\caption{Ground-level pollutant time series and lockdown dates.}
+ \label{fig:Venter2020}
+\end{figure*} 
+
+
 \section{Methods}
 \subsection{Data sources}
 
 \subsubsection{Pollution data}
-The World Air Quality Index project \citep{AQICN2021} provides ground-level readings of pollutants for about 2000 cities in 132 countries sourced from world-wide environmental protection agencies. We downloaded data for about 900 cities for 2014-2021. The pollutants downloaded were PM$_{2.5}$, PM$_{10}$, O$_{3}$, NO$_{2}$, SO$_{2}$ and CO. AQICN converts all readings from mg/m$^{3}$ to AQI levels using the EPA standard and provides a 24 hour average of hourly readings.
+The World Air Quality Index project \citep{AQICN2021} provides ground-level readings of pollutants for about 2000 cities in 132 countries sourced from world-wide environmental protection agencies. We downloaded data for about 900 cities (of the 1672 largest cities in the world\citep{UNDESA2015}) over the period 2014-2021. The pollutants downloaded were PM$_{2.5}$, PM$_{10}$, O$_{3}$, NO$_{2}$, SO$_{2}$ and CO. AQICN converts all readings from mg/m$^{3}$ to AQI levels using the EPA standard \citep{Gilliam2016} and provides a 24 hour average of hourly readings.
 
-(of the 1672 largest cities in the world\citep{UNDESA2015})
 
-Air Quality Index scale as defined by the US-EPA 2016 standard
 
 \subsubsection{Stringency index}
 
-Oxford Covid-19 Government Response Tracker \citep{Hale2020} (Figure \ref{fig:oxcgrt}) daily stringency index is based on a combination of containment and closure policies and assigned an ordinal value (0 to 1, 2, 3, or 4 depending on the indicator). These include school closings, workplace closings, cancellation of public events, restrictions on gatherings, closing public transport, stay at home requirements, restrictions on internal movements, international travel controls and government public information campaigns. These are combined into an index and scaled 0-100. Each of the containment policies are also available individually. In addition, indexes are available at a state (and selected city) level for the United States and Brazil \citep{Hale2020a,Petherick2020} (Figure \ref{fig:statestr}).
+Oxford Covid-19 Government Response Tracker \citep{Hale2020} (Figure \ref{fig:oxcgrt}) daily stringency index is based on a combination of containment and closure policies and assigned an ordinal value (0 to 1, 2, 3, or 4 depending on the indicator). These include school closings, workplace closings, cancellation of public events, restrictions on gatherings, closing public transport, stay at home requirements, restrictions on internal movements, international travel controls and government public information campaigns. These are combined into an index and scaled 0-100. Each of the containment policies are also available individually. In addition, indexes are available at a state (and selected city) level for the United States and Brazil \citep{Hale2020a,Petherick2020} (Figure \ref{fig:statestr}). We downloaded the entire dataset (as of February 2021) and matched the 1672 cities to the lowest level data available (i.e. ordered by city, county/province/state, and country) in the stringency index.
 
 
 
@@ -141,7 +187,7 @@ Oxford Covid-19 Government Response Tracker \citep{Hale2020} (Figure \ref{fig:ox
 \subsubsection{Mobility data}
 \paragraph{Google}
 
-Google COVID-19 Community Mobility Reports \citep{Google2020} provides a  daily percentage change of visitors to retail and recreation, grocery and pharmacy, parks, transit stations, workplaces, and residences from a historic baseline. The baseline is a median value from January 3 to February 6, 2020. This data is at a county/province level for all data. We mapped this data to the cities included in these or by combining multiple counties into a single city. Figure \ref{fig:googlemobility} shows mobility trends for Melbourne, Australia across 2020 and 2021.
+Google COVID-19 Community Mobility Reports \citep{Google2020} provides a  daily percentage change of visitors to retail and recreation, grocery and pharmacy, parks, transit stations, workplaces, and residences from a historic baseline. The baseline is a median value from January 3 to February 6, 2020. This data is at a county/province level for all data. We mapped this data to the cities wholly included in each (i.e. Clark County for Las Vegas) or by combining multiple counties into a single city (i.e. New York City using New York, Kings, Queens, Bronx, and Richmond counties). Figure \ref{fig:googlemobility} shows mobility trends for Melbourne, Australia across 2020 and 2021.
 
 \begin{figure*}
 \centering
@@ -152,7 +198,7 @@ Google COVID-19 Community Mobility Reports \citep{Google2020} provides a  daily 
 
 
 \paragraph{Apple}
-Apple Maps Mobility Trends Reports \citep{Apple2020} provides a daily percent change in Apple Maps routing requests from the baseline January 13, 2020 for driving, walking, and public transport journeys. This data is at a county/province level for all data. We mapped this data to the cities included in these or by combining multiple counties into a single city. Figure \ref{fig:statestr} shows mobility trends for Melbourne, Australia across 2020 and 2021.
+Apple Maps Mobility Trends Reports \citep{Apple2020} provides a daily percent change in Apple Maps routing requests from the baseline January 13, 2020 for driving, walking, and public transport journeys. This data is at a county/province level for all data and the mapping process was similar to the Google data. Figure \ref{fig:statestr} shows mobility trends for Melbourne, Australia across 2020 and 2021.
 
 \paragraph{Apple}
 \begin{figure*}
@@ -163,10 +209,9 @@ Apple Maps Mobility Trends Reports \citep{Apple2020} provides a daily percent ch
 \end{figure*}
 
 \subsubsection{Monthly electricity statistics}
-The International Energy Agency produces reports of electricity generation and usage for 47 countries for 2016-2020 \citep{IEA2021}. These reports break down monthly generation through conventional thermal and combustibles (coal, oil, natural gas, and others) and renewables (nuclear, hydro, wind, solar, and geothermal). These reports are at a country level. We mapped the country level data to each individual city. Figure \ref{fig:au-total} shows trends of Australian net electricity production from all sources 2016-2021 and trends of conventional thermal (Figure \ref{fig:au-thermal}) over the same period. Figure \ref{fig:china-net} shows Chinese electricity generation through coal 2016-2021.
+The International Energy Agency produces reports of electricity generation and usage for 47 countries for 2016-2020 \citep{IEA2021}. These reports provide a break down of monthly generation through conventional thermal and combustibles (coal, oil, natural gas, and others) and renewables (nuclear, hydro, wind, solar, and geothermal). These reports are at a country level. We mapped the country level data to each individual city. Figure \ref{fig:au-total} shows trends of Australian net electricity production from all sources 2016-2021 and trends of conventional thermal (Figure \ref{fig:au-thermal}) over the same period. Figure \ref{fig:china-net} shows Chinese electricity generation through coal 2016-2021.
 
-\subsubsection{Energy usage}
-\paragraph{Apple}
+
 \begin{figure*}
 \centering
 \includegraphics[width=.99\linewidth]{images/{"AUSTRALIA_TOTAL NET PRODUCTION"}.png}
